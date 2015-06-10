@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../public/bootstrap.min.css">
+  </head>
+
+  <body ng-app="app">
+    <div ng-controller="PostsCtrl" class="container">
+      <h1>Recent Posts</h1>
+      <input ng-model="postBody" class="form-control" />
+      <button ng-click="addPost()" class="btn btn-default">Add Post</button>
+      <ul class="list-group">
+        <li ng-repeat="post in posts" class="list-group-item">
+          <strong>@{{ post.username }}</strong>
+          <span>{{ post.body }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <script type="text/javascript" src="../../public/angular.js"></script>
+
+    <script type="text/javascript">
+      var app = angular.module('app', []);
+      app.controller('PostsCtrl', function($scope) {
+        $scope.posts = [
+          {
+            username: '_augustinas',
+            body: 'Node rules!'
+          },
+          {
+            username: 'w',
+            body: 'Making sense of AngularJS atm'
+          }
+        ];
+
+        $scope.addPost = function() {
+          $scope.posts.unshift({
+            username: '_augustinas',
+            body: $scope.postBody
+          })
+          $scope.postBody = null;
+        };
+      });
+    </script>
+  </body>
+
+</html>
