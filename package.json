@@ -1,0 +1,14 @@
+{
+  "name": "simply_social",
+  "version": "0.0.1",
+  "description": "Social app with MEAN stack",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Augustinas Markevicius",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.4"
+  }
+}
