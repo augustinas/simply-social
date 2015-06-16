@@ -6,6 +6,11 @@ var Post = require('./app/models/post');
 var app = express();
 
 app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function(req, res) {
+  res.sendfile('./app/layouts/posts.html');
+});
 
 app.get('/api/posts', function(req, res, next) {
   Post.find(function(err, posts) {

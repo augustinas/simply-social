@@ -3,7 +3,7 @@
 
   <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="../../public/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
   </head>
 
   <body ng-app="app">
@@ -28,21 +28,22 @@
       </ul>
     </div>
 
-    <script type="text/javascript" src="../../public/angular.js"></script>
+    <script type="text/javascript" src="angular.js"></script>
+    <script type="text/javascript" src="angular-resource.js"></script>
 
     <script type="text/javascript">
-      var app = angular.module('app', []);
+      var app = angular.module('app', ['ngResource']);
       app.controller('PostsCtrl', function($scope) {
+        // $http.get('/api/posts')
+        //   .success(function(posts) {
+        //     $scope.posts = posts;
+        //   });
         $scope.posts = [
-          {
-            username: '_augustinas',
-            body: 'Node rules!'
-          },
-          {
-            username: 'w',
-            body: 'Making sense of AngularJS atm'
-          }
-        ];
+        {
+          username: 'augustinas'
+          body: 'yeah'
+        }]
+
 
         $scope.addPost = function() {
           if ($scope.postBody) {
