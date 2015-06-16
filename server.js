@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
-  res.sendfile('./app/layouts/posts.html');
+  res.sendFile('app/layouts/posts.html', { root: __dirname });
 });
 
 app.get('/api/posts', function(req, res, next) {
