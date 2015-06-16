@@ -13,9 +13,11 @@ app.get('/', function(req, res) {
 });
 
 app.get('/api/posts', function(req, res, next) {
-  Post.find(function(err, posts) {
-    if (err) { return next(err) }
-    res.json(posts);
+  Post.find()
+    .sort('-date')
+    .exec(function (err, posts) {
+      if (err) { return next(err) }
+      res.json(posts);
   });
 });
 
@@ -27,7 +29,7 @@ app.post('/api/posts', function(req, res, next) {
 
   post.save(function(err, post) {
     if (err) { return next(err) }
-    res.json(201, post);
+    res.status(201).json(post);
   });
 });
 
