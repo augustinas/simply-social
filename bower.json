@@ -22,5 +22,8 @@
     "angular-resource": "~1.4.0",
     "angular-route": "~1.4.0",
     "mean": "*"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.1"
   }
 }
