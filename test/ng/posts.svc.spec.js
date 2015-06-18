@@ -1,5 +1,5 @@
 describe('Posts service', function () {
-  beforeEach(module('app'))
+  beforeEach(module('app'));
   var PostsSvc, $httpBackend;
 
   beforeEach(inject(function (_PostsSvc_, _$httpBackend_) {
