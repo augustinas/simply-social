@@ -5,4 +5,4 @@ fs.readdirSync(__dirname + '/gulp').forEach(function (task) {
   require('./gulp/' + task);
 });
 
-gulp.task('dev', ['watch:js', 'dev:server']);
+gulp.task('dev', ['watch:js', 'watch:css', 'dev:server']);
